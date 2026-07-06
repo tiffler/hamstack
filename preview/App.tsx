@@ -158,7 +158,7 @@ export function App() {
           <nav className="footnav">
             {NAV.map((n) => <button key={n.key} onClick={() => nav(`/${n.key}`)}>{n.label}</button>)}
           </nav>
-          <div className="footmeta mono">hamstack.design · by tiffler · MIT</div>
+          <div className="footmeta mono">hamstack.design · by <a href="https://www.tienmedia.com" target="_blank" rel="noreferrer">tiffler</a> · MIT</div>
         </div>
       </footer>
     </div>

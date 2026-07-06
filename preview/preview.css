@@ -160,6 +160,8 @@ table.props td:last-child{color:var(--ham-ink-soft);}
 .footnav button{background:none; border:0; cursor:pointer; font-family:var(--ham-font-body); font-size:.88rem; color:var(--ham-ink-soft); transition:color var(--ham-speed) var(--ham-ease);}
 .footnav button:hover{color:var(--ham-primary);}
 .footmeta{font-size:.78rem; color:var(--ham-ink-faint);}
+.footmeta a{color:var(--ham-ink-soft); text-decoration:none; border-bottom:1px solid var(--ham-border-strong); transition:color var(--ham-speed) var(--ham-ease), border-color var(--ham-speed) var(--ham-ease);}
+.footmeta a:hover,.footmeta a:focus-visible{color:var(--ham-primary); border-color:var(--ham-primary);}
 
 @media (max-width:820px){
   .browser,.editor{grid-template-columns:1fr;}
