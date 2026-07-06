@@ -10,10 +10,15 @@ retro/vintage), **prosciutto** (dusty pink, clean/minimal), **smoked** (smokey
 gray, modern) — each with a **light and dark mode**, driven entirely by semantic
 `--ham-*` CSS variables. Every theme + mode passes WCAG AA.
 
+### ▸ [Live demo — tiffler.github.io/hamstack](https://tiffler.github.io/hamstack/)
+
+The full explorer, hosted — component browser, live theme editor, and playground.
+No install needed.
+
 ## Quick start
 
-**Run the explorer** — a design-system site with a component browser, live theme
-editor, and playground (real components, hot-reloading):
+**Run the explorer locally** — the same site as the live demo, hot-reloading
+against the real components:
 
 ```bash
 npm install
