@@ -1,50 +1,55 @@
 # Hamstack 🐹
 
-**The design system for the systemless.** Open, ownable, honey-glazed.
-shadcn-style distribution: copy the code, own the code, zero lock-in.
+**A design system you copy, not install.** Three themes, four components, and a
+live playground — all styled by plain CSS variables. No package to depend on, no
+lock-in: paste the files, own the code. Every theme and mode passes WCAG AA.
 
 > Born when autocorrect turned "Jamstack" into "Hamster." We kept it.
 
-Three themes, each a distinct personality — **honey-glazed** (terracotta clay,
-retro/vintage), **prosciutto** (dusty pink, clean/minimal), **smoked** (smokey
-gray, modern) — each with a **light and dark mode**, driven entirely by semantic
-`--ham-*` CSS variables. Every theme + mode passes WCAG AA.
+**[▸ Live demo](https://tiffler.github.io/hamstack/)** — the full explorer, hosted.
+No install: browse the components, edit themes live, play with the tokens.
 
-### ▸ [Live demo — tiffler.github.io/hamstack](https://tiffler.github.io/hamstack/)
+## Use it in 30 seconds
 
-The full explorer, hosted — component browser, live theme editor, and playground.
-No install needed.
+Copy **three files** into any HTML page — a theme, the fonts, and the prebuilt
+styles — then paste a button. No bundler, no build step:
 
-## Quick start
+```html
+<link rel="stylesheet" href="tokens/honey-glazed.css" />
+<link rel="stylesheet" href="tokens/fonts/fonts.css" />
+<link rel="stylesheet" href="dist/hamstack.css" />
 
-**Run the explorer locally** — the same site as the live demo, hot-reloading
-against the real components:
+<button class="inline-flex items-center justify-center h-12 px-[var(--ham-space-5)]
+  rounded-[var(--ham-radius)] bg-[var(--ham-primary)] text-[var(--ham-primary-ink)]
+  shadow-[var(--ham-shadow-sm)] font-[family-name:var(--ham-font-body)] font-semibold
+  text-[length:var(--ham-text-base)]">Save changes</button>
+```
+
+That renders a styled Hamstack button. The key thing: it takes all **three**
+files — the theme gives you the colors, and `dist/hamstack.css` (prebuilt) makes
+the component's classes work. Nothing to compile. You only need Tailwind or npm
+if you want to author *new* components.
+
+Prefer React? `import { Button } from "hamstack"` once the package is wired up —
+see [Standalone components](#standalone-components).
+
+## Run the explorer locally
+
+The same site as the live demo, hot-reloading against the real components:
 
 ```bash
 npm install
 npm run dev          # → http://127.0.0.1:5178
 ```
 
-The explorer has four views (top nav): **Overview**, **Foundations** (live token
-swatches, type, spacing, radius), **Components** (a sidebar browser — each
-component's examples, props table, usage, and design law), and **Theme editor**
-(edit any token with color pickers + sliders; changes apply across the whole app
-live, with a copy-paste CSS export). Add a component to `components/` and register
-it in `preview/registry.tsx` to make it appear in the browser.
+Four views (top nav): **Overview**, **Foundations** (token swatches, type,
+spacing, radius), **Components** (a browser with each component's examples, props,
+usage, and design law), and **Theme editor** (edit any token live, with a
+copy-paste CSS export). Add a component to `components/` and register it in
+`preview/registry.tsx` to list it.
 
-**Use it in Claude Design:** point `/design-sync` at this repo (or open the
-synced project). Claude reads `DESIGN_SYSTEM.md` and each component's
-`*.intent.md` as binding design law.
-
-**Use it by hand:**
-
-1. Import the tokens and fonts once, then pick a theme on `<html>`:
-   ```html
-   <link rel="stylesheet" href="tokens/honey-glazed.css" />
-   <link rel="stylesheet" href="tokens/fonts/fonts.css" />
-   <html data-theme="honey-glazed">          <!-- + class="dark" for dark mode -->
-   ```
-2. Copy any component from `components/` (see "Standalone components" below).
+**Use it in Claude Design:** point `/design-sync` at this repo. Claude reads
+`DESIGN_SYSTEM.md` and each component's `*.intent.md` as binding design law.
 
 ## Themes & modes
 

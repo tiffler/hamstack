@@ -158,6 +158,7 @@ export function App() {
           <nav className="footnav">
             {NAV.map((n) => <button key={n.key} onClick={() => nav(`/${n.key}`)}>{n.label}</button>)}
           </nav>
+          <a className="footfeedback" href="https://github.com/tiffler/hamstack/issues/new?template=usability.md&labels=feedback" target="_blank" rel="noreferrer">🐹 Something unclear? Flag it here</a>
           <div className="footmeta mono">hamstack.design · by <a href="https://www.tienmedia.com" target="_blank" rel="noreferrer">tiffler</a> · MIT</div>
         </div>
       </footer>
@@ -301,6 +302,39 @@ function ThemeEditor({ theme, dark, edits, setEdits }: { theme: string; dark: bo
   const dirty = Object.keys(edits).length > 0;
   const cssExport = `[data-theme="${theme}"]${dark ? ".dark" : ""} {\n${EDIT_KEYS.filter((k) => edits[k] !== undefined).map((k) => `  ${k}: ${edits[k]};`).join("\n")}\n}`;
 
+  // Copy-to-clipboard with a graceful fallback: if the clipboard API is blocked
+  // (insecure context, sandbox, denied permission) we select the text and tell
+  // the user to press ⌘/Ctrl-C, instead of silently doing nothing.
+  const preRef = React.useRef<HTMLPreElement>(null);
+  const [copyMsg, setCopyMsg] = React.useState("");
+  const copyCss = async () => {
+    const selectForManualCopy = () => {
+      const el = preRef.current;
+      if (el) {
+        const r = document.createRange();
+        r.selectNodeContents(el);
+        const sel = window.getSelection();
+        sel?.removeAllRanges();
+        sel?.addRange(r);
+      }
+      setCopyMsg("Press ⌘/Ctrl-C to copy");
+    };
+    try {
+      const write = navigator.clipboard?.writeText(cssExport);
+      if (!write) return selectForManualCopy();
+      // writeText can hang forever without user activation — never leave the
+      // button stuck; if it doesn't settle quickly, fall back to select-and-copy.
+      await Promise.race([
+        write,
+        new Promise((_, reject) => window.setTimeout(() => reject(new Error("clipboard-timeout")), 1200)),
+      ]);
+      setCopyMsg("Copied ✓");
+    } catch {
+      selectForManualCopy();
+    }
+    window.setTimeout(() => setCopyMsg(""), 2500);
+  };
+
   return (
     <div className="editor">
       <aside className="editpanel">
@@ -324,7 +358,12 @@ function ThemeEditor({ theme, dark, edits, setEdits }: { theme: string; dark: bo
         <div className="editactions">
           <button className="pgreset" onClick={() => setEdits({})} disabled={!dirty}>↺ Reset</button>
         </div>
-        {dirty && <div className="exportbox"><div className="exhd">Export — paste into <span className="mono">tokens/{theme}.css</span></div><pre className="code sm">{cssExport}</pre></div>}
+        {dirty && <div className="exportbox">
+          <div className="exhd">Export — paste into <span className="mono">tokens/{theme}.css</span>
+            <button className="copybtn" onClick={copyCss}>{copyMsg || "Copy"}</button>
+          </div>
+          <pre className="code sm" ref={preRef}>{cssExport}</pre>
+        </div>}
       </aside>
 
       <main className="editpreview">
