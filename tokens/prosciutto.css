@@ -1,0 +1,63 @@
+/* ============================================
+   HAMSTACK · PROSCIUTTO
+   Dusty pink, warm editorial. Light + dark.
+   Serif display, tighter radii. The cured cut.
+   ============================================ */
+
+[data-theme="prosciutto"] {
+  /* ── Light mode ── */
+  --ham-surface: #FDF6EC;
+  --ham-surface-raised: #FFFDF8;
+  --ham-surface-sunken: #F5EBDB;
+  --ham-ink: #3B2A1E;
+  --ham-ink-soft: #6E5A48;
+  --ham-ink-faint: #796755;        /* AA on surface, raised & sunken */
+  --ham-primary: #AC5673;          /* dusty pink */
+  --ham-primary-hover: #8B445C;
+  --ham-primary-ink: #FFF7F4;
+  --ham-accent: #E8A33D;           /* honey amber */
+  --ham-accent-ink: #241119;
+  --ham-success: #5F7843;
+  --ham-warning: #9F6124;
+  --ham-danger: #B34A3F;
+  --ham-danger-ink: #FFF7F4;
+  --ham-border: #E4D5BE;
+  --ham-border-strong: #A98954;
+  --ham-ring: var(--ham-primary);
+
+  /* minimal personality: sharp small radii, serif headlines, flat shadows */
+  --ham-radius-sm: 2px;
+  --ham-radius: 4px;
+  --ham-radius-lg: 8px;
+  --ham-font-display: "Fraunces", "Georgia", serif;
+  --ham-tracking-display: -0.01em;
+  --ham-shadow-sm: 0 1px 2px rgba(51, 38, 42, 0.04);
+  --ham-shadow: 0 1px 3px rgba(51, 38, 42, 0.06);
+  --ham-shadow-lg: 0 4px 14px rgba(51, 38, 42, 0.08);
+}
+
+[data-theme="prosciutto"].dark {
+  /* ── Dark mode ── */
+  --ham-surface: #241A15;
+  --ham-surface-raised: #2F221B;
+  --ham-surface-sunken: #1A120E;
+  --ham-ink: #F2E6DA;
+  --ham-ink-soft: #CBB8A7;
+  --ham-ink-faint: #9F8978;        /* AA on surface, raised & sunken */
+  --ham-primary: #DE8DA6;          /* dusty pink glows on dark */
+  --ham-primary-hover: #E7ADBF;
+  --ham-primary-ink: #241119;
+  --ham-accent: #EFB45A;
+  --ham-accent-ink: #241119;
+  --ham-success: #718E50;
+  --ham-warning: #C97B2D;
+  --ham-danger: #C76B61;
+  --ham-danger-ink: #241119;
+  --ham-border: #3E2E25;
+  --ham-border-strong: #7F6252;
+  --ham-ring: var(--ham-primary);
+
+  --ham-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --ham-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+  --ham-shadow-lg: 0 4px 14px rgba(0, 0, 0, 0.4);
+}

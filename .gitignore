@@ -1,0 +1,19 @@
+# dependencies (bare pattern also excludes the design-sync scratch symlink,
+# not just a real node_modules/ directory)
+node_modules
+node_modules/
+
+# design-sync: private tooling + build state (kept out of the public repo)
+ds-bundle/
+.ds-sync/
+.design-sync/
+
+# build outputs (regenerated: `npm run build:css`, `vite build`)
+preview/dist/
+
+# logs / OS
+*.log
+.DS_Store
+
+# local editor/agent settings
+.claude/settings.local.json

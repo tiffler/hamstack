@@ -1,0 +1,64 @@
+/* ============================================
+   HAMSTACK · SMOKED
+   Smokey gray, modern & minimal. Light + dark.
+   Modern grotesque display (Archivo),
+   crisp medium radii, clean neutral shadows.
+   ============================================ */
+
+[data-theme="smoked"] {
+  /* ── Light mode ── */
+  --ham-surface: #F4F4F5;
+  --ham-surface-raised: #FBFBFC;
+  --ham-surface-sunken: #E7E7EA;
+  --ham-ink: #1D1D20;
+  --ham-ink-soft: #52525B;
+  --ham-ink-faint: #65656E;        /* AA on surface, raised & sunken */
+  --ham-primary: #3F3F46;          /* graphite */
+  --ham-primary-hover: #2A2A2E;
+  --ham-primary-ink: #FAFAFA;
+  --ham-accent: #5B5B64;           /* slate gray */
+  --ham-accent-ink: #FAFAFA;
+  --ham-success: #4C7A57;
+  --ham-warning: #8F5F20;
+  --ham-danger: #B0463C;
+  --ham-danger-ink: #FFF7F4;
+  --ham-border: #DEDEE2;
+  --ham-border-strong: #888891;
+  --ham-ring: var(--ham-primary);
+
+  /* modern personality: crisp medium radius, modern grotesque, clean shadows */
+  --ham-radius-sm: 4px;
+  --ham-radius: 6px;
+  --ham-radius-lg: 12px;
+  --ham-font-display: "Archivo", system-ui, sans-serif;
+  --ham-tracking-display: -0.01em;
+  --ham-shadow-sm: 0 1px 2px rgba(24, 24, 27, 0.06);
+  --ham-shadow: 0 2px 8px rgba(24, 24, 27, 0.08);
+  --ham-shadow-lg: 0 8px 24px rgba(24, 24, 27, 0.12);
+}
+
+[data-theme="smoked"].dark {
+  /* ── Dark mode (smokey charcoal) ── */
+  --ham-surface: #1B1B1E;
+  --ham-surface-raised: #26262A;
+  --ham-surface-sunken: #141416;
+  --ham-ink: #E9E9EC;
+  --ham-ink-soft: #A1A1AA;
+  --ham-ink-faint: #8C8C95;        /* AA on surface, raised & sunken */
+  --ham-primary: #B4B4BD;          /* silver, reads on charcoal */
+  --ham-primary-hover: #C7C7CE;
+  --ham-primary-ink: #1B1B1E;
+  --ham-accent: #8E8E97;
+  --ham-accent-ink: #1B1B1E;
+  --ham-success: #8FAE72;
+  --ham-warning: #D9924B;
+  --ham-danger: #D06A5E;
+  --ham-danger-ink: #1B1B1E;
+  --ham-border: #34343A;
+  --ham-border-strong: #6D6D77;
+  --ham-ring: var(--ham-primary);
+
+  --ham-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --ham-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+  --ham-shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.6);
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "hamstack",
+  "homepage": "https://hamstack.design",
+  "items": [
+    {
+      "name": "tokens",
+      "type": "registry:theme",
+      "title": "Hamstack Tokens",
+      "description": "Semantic token layer with three themes: honey-glazed (default), prosciutto, smoked.",
+      "files": [
+        { "path": "tokens/honey-glazed.css", "type": "registry:file", "target": "styles/hamstack/honey-glazed.css" },
+        { "path": "tokens/prosciutto.css", "type": "registry:file", "target": "styles/hamstack/prosciutto.css" },
+        { "path": "tokens/smoked.css", "type": "registry:file", "target": "styles/hamstack/smoked.css" }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Hamstack button. Four variants, three sizes, one primary per view.",
+      "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
+      "registryDependencies": ["hamstack/tokens"],
+      "files": [
+        { "path": "components/button/button.tsx", "type": "registry:ui" },
+        { "path": "components/button/button.intent.md", "type": "registry:file", "target": "components/hamstack/button.intent.md" }
+      ]
+    }
+  ]
+}

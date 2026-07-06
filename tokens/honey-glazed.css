@@ -1,0 +1,98 @@
+/* ============================================
+   HAMSTACK · HONEY-GLAZED (default theme)
+   Terracotta clay on warm cream. Light + dark.
+   Playful-but-professional: round (8px), Bricolage.
+   Mode: add class="dark" alongside the theme.
+   Semantic tokens only. Never hardcode a hue.
+   ============================================ */
+
+:root,
+[data-theme="honey-glazed"] {
+  /* ── Light mode colors ── */
+  --ham-surface: #FAF3EE;
+  --ham-surface-raised: #FFFCFA;
+  --ham-surface-sunken: #F0E3DA;
+  --ham-ink: #33231C;
+  --ham-ink-soft: #6B564C;
+  --ham-ink-faint: #796055;        /* AA on surface, raised & sunken */
+  --ham-primary: #B0562F;          /* terracotta clay */
+  --ham-primary-hover: #884224;
+  --ham-primary-ink: #FFF7F4;
+  --ham-accent: #7E6A4E;           /* aged parchment */
+  --ham-accent-ink: #FFF7F4;
+  --ham-success: #5A764A;
+  --ham-warning: #9E6023;
+  --ham-danger: #C0362F;           /* crimson — kept clear of the clay primary */
+  --ham-danger-ink: #FFF7F4;
+  --ham-border: #E7D6CB;
+  --ham-border-strong: #AE836A;
+  --ham-ring: var(--ham-primary);
+
+  /* ── Shared, theme/mode-independent ── */
+  /* retro personality: generously rounded */
+  --ham-radius-sm: 8px;
+  --ham-radius: 12px;
+  --ham-radius-lg: 24px;
+  --ham-radius-pill: 999px;
+
+  --ham-font-display: "Bricolage Grotesque", "Figtree", system-ui, sans-serif;
+  --ham-font-body: "Figtree", system-ui, sans-serif;
+  --ham-font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --ham-text-xs: 0.8125rem;
+  --ham-text-sm: 0.9375rem;
+  --ham-text-base: 1.0625rem;
+  --ham-text-lg: 1.25rem;
+  --ham-text-xl: 1.625rem;
+  --ham-text-2xl: 2.25rem;
+  --ham-text-hero: clamp(2.75rem, 6vw, 4.5rem);
+  --ham-leading: 1.6;
+  --ham-tracking-display: -0.02em;
+
+  --ham-space-1: 4px;
+  --ham-space-2: 8px;
+  --ham-space-3: 16px;
+  --ham-space-4: 24px;
+  --ham-space-5: 32px;
+  --ham-space-6: 40px;
+  --ham-space-7: 48px;
+  --ham-space-8: 64px;
+
+  /* retro personality: warm hard-offset shadows (vintage print) */
+  --ham-shadow-sm: 2px 2px 0 rgba(74, 48, 26, 0.13);
+  --ham-shadow: 3px 3px 0 rgba(74, 48, 26, 0.16);
+  --ham-shadow-lg: 5px 5px 0 rgba(74, 48, 26, 0.17);
+
+  --ham-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ham-speed: 180ms;
+}
+
+:root.dark,
+[data-theme="honey-glazed"].dark {
+  /* ── Dark mode colors ── */
+  --ham-surface: #221812;
+  --ham-surface-raised: #2C1F18;
+  --ham-surface-sunken: #180F0A;
+  --ham-ink: #F2E5D9;
+  --ham-ink-soft: #CBB4A2;
+  --ham-ink-faint: #9E8877;        /* AA on surface, raised & sunken */
+  --ham-primary: #DA8A5F;          /* light clay glows on dark */
+  --ham-primary-hover: #E2A280;
+  --ham-primary-ink: #241119;
+  --ham-accent: #C9A66E;
+  --ham-accent-ink: #241119;
+  --ham-success: #6F8D4F;
+  --ham-warning: #C97B2D;
+  --ham-danger: #D65D56;
+  --ham-danger-ink: #241119;
+  --ham-border: #3E2C22;
+  --ham-border-strong: #845F49;
+  --ham-ring: var(--ham-primary);
+
+  --ham-shadow-sm: 2px 2px 0 rgba(0, 0, 0, 0.4);
+  --ham-shadow: 3px 3px 0 rgba(0, 0, 0, 0.5);
+  --ham-shadow-lg: 5px 5px 0 rgba(0, 0, 0, 0.55);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --ham-speed: 0ms; }
+}
