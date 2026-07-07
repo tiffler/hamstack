@@ -159,7 +159,7 @@ export function App() {
             {NAV.map((n) => <button key={n.key} onClick={() => nav(`/${n.key}`)}>{n.label}</button>)}
           </nav>
           <a className="footfeedback" href="https://github.com/tiffler/hamstack/issues/new?template=usability.md&labels=feedback" target="_blank" rel="noreferrer">🐹 Something unclear? Flag it here</a>
-          <div className="footmeta mono">hamstack.design · by <a href="https://www.tienmedia.com" target="_blank" rel="noreferrer">tiffler</a> · MIT</div>
+          <div className="footmeta mono"><a href="https://tiffler.github.io/hamstack/" target="_blank" rel="noreferrer">Live demo ↗</a> · by <a href="https://www.tienmedia.com" target="_blank" rel="noreferrer">tiffler</a> · MIT</div>
         </div>
       </footer>
     </div>

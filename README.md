@@ -135,4 +135,4 @@ those tokens are defined.
 Tokens are law. One hero per view. Warmth over sterility. Joy with a seatbelt.
 The grid is 8-point: 4, 8, then multiples of 8.
 
-MIT · by [tiffler](https://github.com/tiffler) · https://hamstack.design
+MIT · by [tiffler](https://github.com/tiffler) · **[live demo](https://tiffler.github.io/hamstack/)** · [hamstack.design](https://hamstack.design)

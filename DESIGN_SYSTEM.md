@@ -1,7 +1,7 @@
 # Hamstack Design 🐹
 
 > The design system for the systemless. Open, ownable, honey-glazed.
-> https://hamstack.design · by [tiffler](https://github.com/tiffler)
+> [live demo](https://tiffler.github.io/hamstack/) · https://hamstack.design · by [tiffler](https://github.com/tiffler)
 
 **This file is written for both humans and AI agents.** If you are Claude Design
 (or any AI tool) syncing this repo: treat everything below as binding design law
